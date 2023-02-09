@@ -13,7 +13,7 @@ The goal of this project is to detect and quantify the number of `M&M` candies,
 as well as their radius, per color in a given image. 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/Tevel/main/data/mnm_image.png"  width="200" height="150">
+  <img src="https://raw.githubusercontent.com/razisamuely/MnM-candies-detection/main/data/mnm_image.png"  width="200" height="150">
 </p>
 
 
@@ -62,12 +62,12 @@ The steps involved are:
 
 ### Candies detection and color classification
 <p align="center">
-    <img src="https://raw.githubusercontent.com/razisamuely/Tevel/main/data/HoughCircles_gif.gif"  width="300" height="230">
+    <img src="https://raw.githubusercontent.com/razisamuely/MnM-candies-detection/main/data/HoughCircles_gif.gif"  width="300" height="230">
 </p>
 
 ### Radius vs Color plot 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/Tevel/main/data/HoughCircles_radius_vs_color_scatter_box_plot.png"  width="400" height="300">
+  <img src="https://raw.githubusercontent.com/razisamuely/MnM-candies-detection/main/data/HoughCircles_radius_vs_color_scatter_box_plot.png"  width="400" height="300">
 </p>
 
 
@@ -81,13 +81,13 @@ The `Circle Hough Transform` works as follows:
 3. Centers for the circles are selected where the highlights will appear.
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/razisamuely/Tevel/main/data/CircleHough_Transform.gif"  width="300" height="230">
+    <img src="https://raw.githubusercontent.com/razisamuely/MnM-candies-detection/main/data/CircleHough_Transform.gif"  width="300" height="230">
 </p>
 
 ### Classify candy color
 The process for determining the color of a circle is based on the proportion of 
 pixels with colors within predefined upper and lower color bounds. 
-The method for choosing these bounds is implemented here [`find_color_limits.ipynb`](https://github.com/razisamuely/Tevel/blob/main/finde_color_limits.ipynb) 
+The method for choosing these bounds is implemented here [`find_color_limits.ipynb`](https://github.com/razisamuely/MnM-candies-detection/blob/main/finde_color_limits.ipynb) 
 In essence, for each color, pixels were manually sampled and cropped 
 (these samples can be found in the `data` directory). 
 Then, the mean and standard deviation were calculated and a series of 
@@ -96,7 +96,7 @@ The following animation illustrates the process, starting with strict limits whe
 gradually moving towards more permissive limits where orange is brightly displayed, until yellow starts to become prominent:
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/razisamuely/Tevel/main/data/2023-02-08%2018.23.12.gif"  width="450" height="170">
+    <img src="https://raw.githubusercontent.com/razisamuely/MnM-candies-detection/main/data/2023-02-08%2018.23.12.gif"  width="450" height="170">
 </p>
 
 
@@ -120,7 +120,7 @@ However, there is a clear drawback to this method:
 as indicated by the blue arrow and box in the image.
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/razisamuely/Tevel/main/data/HoughCircles_miss.png"  width="200" height="170">
+    <img src="https://raw.githubusercontent.com/razisamuely/MnM-candies-detection/main/data/HoughCircles_miss.png"  width="200" height="170">
 </p>
 
 
@@ -129,7 +129,7 @@ This is illustrated in the image where a yellow candy is mistakenly detected as 
 
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/razisamuely/Tevel/main/data/false_color_detection.png"  width="200" height="170">
+    <img src="https://raw.githubusercontent.com/razisamuely/MnM-candies-detection/main/data/false_color_detection.png"  width="200" height="170">
 </p>
 
 It's important to keep in mind that this technique is not very reliable and can easily 
@@ -161,7 +161,7 @@ For example:
 Even the project isn't implementing it end2end I thought it would be nice to show present images which describes the flow.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/Tevel/main/data/color_edged_cotours.png"  width="360" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MnM-candies-detection/main/data/color_edged_cotours.png"  width="360" height="200">
 </p>
 
 
@@ -176,13 +176,13 @@ The following steps were taken:
 1. Labeling into 6 categories (one for each color).
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/Tevel/main/data/LabelImage.png"  width="250" height="150">
+  <img src="https://raw.githubusercontent.com/razisamuely/MnM-candies-detection/main/data/LabelImage.png"  width="250" height="150">
 </p>
 
 2. Augmenting the single labeled image (including flipping, cropping, adding noise etc.)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/Tevel/main/data/Augmentation.png"  width="300" height="300">
+  <img src="https://raw.githubusercontent.com/razisamuely/MnM-candies-detection/main/data/Augmentation.png"  width="300" height="300">
 </p>
 
 3. Selecting a lightweight model, as `ssd_mobilenet_v2_fpnlite_320x320`, that could be efficiently trained on a local machine.
