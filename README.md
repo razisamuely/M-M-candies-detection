@@ -20,11 +20,11 @@ as well as their radius, per color in a given image.
 
 To accomplish this, the project employs traditional 
 and basic feature extraction techniques, as well as simple rules.
-The project hence some genral assumption:
-1. the distance from all candies to the camera lens is equal.
+The project hence some general assumption:
+1. The distance from all candies to the camera lens is equal.
 2. The distance from all candies is similar (even though there some that a bit closer, on top of the pile)
 3. There are only 6 colors (blue, green, brown, blue, red, orange)
-4. The project uses general distance units and therefore the radius value of 46 
+4. The project uses discrete general distance units and therefore the radius value of 46 
 does not represent any specific unit of measurement in reality.
 
 It is important to emphasize that there is significant potential 
@@ -151,13 +151,14 @@ of this technique. For instance:
 
 
 
-### Color Edge detection
+### Color Edge detection & contours
 Of-curse there is another ways for retrieving the same target without the need of training process.
 For example:
 1) Using color limit for extracting pixels
 2) Implement edge detection in order to mark the border between candies 
 3) Apply contours per color.
-4) 
+
+
 Even the project isn't implementing it end2end I thought it would be nice to show present images which describes the flow.
 
 <p align="center">
@@ -190,22 +191,18 @@ The following steps were taken:
 
 
 
-
-Long story short, the results are poor, probably deu the mentioned above.
-Any way, these [link](https://github.com/razisamuely/hens) 
-contain the code which can be used for further research.
-
 In conclusion, the results were not satisfactory, likely due to the limitations mentioned above. 
 Nonetheless, the code for this exploration can be found at the following [link](https://github.com/razisamuely/hens)  
 and can serve as a basis for further research.
 
 
 # Summary 
-Traditional computer vision object detection methods are straightforward and efficient in terms of computational 
-resources, but they struggle with detecting complex objects and adapting to variations in object appearance. 
-For the purpose of detecting the color and radius of M&Ms, the `Circle Hough Transform` and color classification 
-based limits offer a more advantageous solution in terms of simplicity, speed, and resource consumption compared 
-to advanced deep techniques and even to other traditional techniques.
+In short, traditional computer vision object detection methods require domain knowledge and are usually efficient in 
+terms of computational resources, but they have difficulty detecting complex objects and adapting to changes in appearance
+For the specific task of detecting the color and radius of M&Ms, the `Circle Hough Transform` combined with `color 
+classification based limits` approach is a more advantageous solution in terms of simplicity, 
+speed, and resource consumption when compared to more advanced deep learning techniques
+and even other traditional techniques.
 
 ## Note
 Please note that this is a first and short iteration, and its main goal is to prove the concept. 
