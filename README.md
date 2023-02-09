@@ -22,9 +22,8 @@ To accomplish this, the project employs traditional
 and basic feature extraction techniques, as well as simple rules.
 The project hence some general assumption:
 1. The distance from all candies to the camera lens is equal.
-2. The distance from all candies is similar (even though there some that a bit closer, on top of the pile)
-3. There are only 6 colors (blue, green, brown, blue, red, orange)
-4. The project uses discrete general distance units and therefore the radius value of 46 
+2. There are only 6 colors (blue, green, brown, blue, red, orange)
+3. The project uses discrete general distance units and therefore the radius value of 46 
 does not represent any specific unit of measurement in reality.
 
 It is important to emphasize that there is significant potential 
