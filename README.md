@@ -80,9 +80,12 @@ The `Circle Hough Transform` works as follows:
 2. Circles are drawn on the detected edges with predefined radii.
 3. Centers for the circles are selected where the highlights will appear.
 
+
 <p align="center">
     <img src="https://raw.githubusercontent.com/razisamuely/MnM-candies-detection/main/data/CircleHough_Transform.gif"  width="300" height="230">
 </p>
+
+[link](https://www.youtube.com/watch?v=Ltqt24SQQoI) 
 
 ### Classify candy color
 The process for determining the color of a circle is based on the proportion of 
